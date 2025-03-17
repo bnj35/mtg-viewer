@@ -7,6 +7,8 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: CardRepository::class)]
+#[ORM\Index(name: 'uuid_idx', columns: ['uuid'])]
+#[ORM\Index(name: 'name_idx', columns: ['name'])]
 class Card implements \JsonSerializable
 {
     #[ORM\Id]
